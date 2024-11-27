@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import path from "path";
-import { formatPath } from "./util/filepath";
-import { IImgInfo, IPicGoDeleteRequest } from "./types/picgo";
-import { handleResponse } from "./util/http";
 import { Env } from "./types/env";
+import { IImgInfo, IPicGoDeleteRequest } from "./types/picgo";
+import { formatPath } from "./util/filepath";
+import { handleResponse } from "./util/http";
 
 async function createImgInfo(img: File, env: Env) {
   const imginfo: IImgInfo = {
@@ -24,7 +27,7 @@ export async function uploadImage(
 ) {
   try {
     const img = await request.formData().then((data) => {
-      for (let val of data.values()) {
+      for (const val of data.values()) {
         if (val instanceof File) {
           return val;
         }
@@ -49,6 +52,7 @@ export async function uploadImage(
       result: [imginfo.imgUrl],
       fullResult: [imginfo],
     });
+
   } catch (err: any) {
     console.debug(err);
     return handleResponse(500, { success: false, message: err.message });

@@ -1,6 +1,6 @@
-import { handleResponse } from "./util/http";
 import { deleteImage, uploadImage } from "./handler";
 import { Env } from "./types/env";
+import { handleResponse } from "./util/http";
 
 export default {
   async fetch(

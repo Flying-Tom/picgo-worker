@@ -1,6 +1,5 @@
 import { IPicGoResponse } from "../types/picgo";
 
-
 export function handleResponse(
   statusCode: number,
   body?: IPicGoResponse,
