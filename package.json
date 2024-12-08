@@ -1,16 +1,22 @@
 {
   "name": "picgo-worker",
   "version": "1.0.0",
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241112.0",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.5",
-    "wrangler": "^3.91.0"
-  },
   "private": true,
   "scripts": {
-    "start": "wrangler dev",
     "deploy": "wrangler deploy",
+    "lint": "eslint",
+    "start": "wrangler dev",
     "test": "vitest"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241112.0",
+    "@eslint/js": "^9.16.0",
+    "@types/node": "^22.10.1",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0",
+    "vitest": "^2.1.5",
+    "wrangler": "^3.91.0"
   }
 }
