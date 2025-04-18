@@ -1,6 +1,6 @@
-import { handleResponse } from "./util/http";
-import { deletePic, uploadPic } from "./handler";
+import { deleteImage, uploadImage } from "./handler";
 import { Env } from "./types/env";
+import { handleResponse } from "./util/http";
 
 export default {
   async fetch(
@@ -15,9 +15,9 @@ export default {
         return handleResponse(403, { success: false, message: "Unauthorized access" });
       }
       if (url.pathname.startsWith('/upload')) {
-        return uploadPic(request, env, ctx);
+        return uploadImage(request, env, ctx);
       } else if (url.pathname.startsWith('/delete')) {
-        return deletePic(request, env, ctx);
+        return deleteImage(request, env, ctx);
       }
     }
     return handleResponse(200, { success: true, message: "This is PicGo Worker!" });

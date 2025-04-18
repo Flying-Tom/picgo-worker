@@ -1,5 +1,4 @@
 import * as crypto from 'crypto';
-
 import { IImgInfo } from "../types/picgo";
 
 class FileNameGenerator {

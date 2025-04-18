@@ -8,7 +8,7 @@ export interface IImgInfo {
   imgUrl?: string
   id?: string
   type?: string
-  [propName: string]: any
+  [propName: string]: unknown
 }
 
 
@@ -17,7 +17,7 @@ export interface IPicGoResponse {
   message?: string;
   msg?: string;
   result?: string[] | string;
-  fullResult?: Record<string, any>[];
+  fullResult?: Record<string, unknown>[];
 }
 
 export interface IPicGoDeleteRequest {
