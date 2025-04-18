@@ -12,18 +12,16 @@ jobs:
     strategy:
       matrix:
         node-version: [22]
+        pnpm-version: [9]
     steps:
       - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: ${{ matrix.pnpm-version }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
-      - name: Install Dependency
-        run: pnpm install
-      - name: Run ESLint
-        run: pnpm run lint
+      - run: pnpm install
+      - run: pnpm run lint

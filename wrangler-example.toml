@@ -1,7 +1,11 @@
-name = "picgo-worker"
-main = "src/index.ts"
 compatibility_date = "2024-11-06"
 compatibility_flags = ["nodejs_compat"]
+main = "src/index.ts"
+name = "picgo-worker"
+
+routes = [
+  {pattern = "picgo.example.com", custom_domain = true},
+]
 
 [vars]
 FORMAT = "{year}/{month}/{day}/{md5}.{extName}"

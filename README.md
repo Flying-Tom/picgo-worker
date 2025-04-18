@@ -12,11 +12,7 @@
 
 ## 部署
 
-1. 点击如下按钮快速安装
-
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Flying-Tom/picgo-worker)
-
-2. Fork 或者 Clone 这个仓库，并在`wrangler.toml` 中设置如下 secrets：
+Fork 或者 Clone 这个仓库，并在`wrangler.toml` 中设置如下 secrets：
 
 - `TOKEN`: worker 的访问令牌
   - `upload` api: `https://example.com/upload?key=${TOKEN}`
